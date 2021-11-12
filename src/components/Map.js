@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Map, Marker, ZoomControl } from "pigeon-maps";
 
 export default function MyMap(props) {
+  const [selectedMarker, setSelectedMarker] = useState(0);
+
+  const marker = props.marker.map((e, i) => (
+    <Marker
+      color={i === selectedMarker ? "red" : "blue"}
+      width={i === selectedMarker ? 50 : 40}
+      anchor={[e.lat, e.lng]}
+      onClick={() => setSelectedMarker(i)}
+    />
+  ));
+
   return (
-    <Map
-      metaWheelZoom={true}
-      dprs={[1, 2]}
-      height={300}
-      defaultCenter={[props.lat, props.lng]}
-      defaultZoom={8}
-    >
-      <ZoomControl />
-      <Marker
-        onClick={() => alert(`Map is showing ${props.locationName}`)}
-        color="red"
-        width={50}
-        anchor={[props.lat, props.lng]}
-        Í
-      />
-    </Map>
+    <div>
+      <h1>{props.marker[selectedMarker].name}</h1>
+      <Map
+        metaWheelZoom={true}
+        dprs={[1, 2]}
+        height={500}
+        defaultCenter={[props.lat, props.lng]}
+        defaultZoom={5}
+      >
+        <ZoomControl />
+        {marker}
+      </Map>
+    </div>
   );
 }
