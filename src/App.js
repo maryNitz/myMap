@@ -1,12 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import MyTabs from './components/Tabs';
+import "./App.css";
+import MyTabs from "./components/Tabs";
 
 function App() {
   return (
-<div>
-<MyTabs />
-</div>
+    <div>
+      <MyTabs />
+    </div>
   );
 }
 
