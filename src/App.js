@@ -29,6 +29,17 @@ function App() {
               { lat: 21.5242176, lng: -87.3749758, name: "Holbox" },
             ],
           },
+          {
+            name: "Dänemark",
+            lat: 56.0688503,
+            lng: 10.481165,
+            markers: [
+              { lat: 55.73081, lng: 8.9401842, name: "Billund" },
+              { lat: 55.2416098, lng: 9.3076997, name: "Hadersleben" },
+              { lat: 55.4915878, lng: 9.3365125, name: "Kolding" },
+              { lat: 55.6713812, lng: 12.4537369, name: "Kopenhagne" },
+            ],
+          },
         ]}
       />
     </div>
